@@ -6,10 +6,10 @@ import {
   SunIcon,
   MoonIcon,
   SunMoon,
-  CloudMoon,
+  Coffee,
   Flower,
   Flower2,
-  Coffee,
+  Trees,
 } from "lucide-react";
 
 export default function ModeToggle() {
@@ -22,7 +22,7 @@ export default function ModeToggle() {
 
   if (!mounted) return null;
 
-  const themes = ["light", "dark", "system", "light2", "dark2", "cafe"];
+  const themes = ["light", "dark", "system","cafe", "light2", "dark2","forest" ];
 
   const handleToggle = () => {
     const currentIndex = themes.indexOf(theme!);
@@ -38,12 +38,15 @@ export default function ModeToggle() {
         return <SunIcon />;
       case "system":
         return <SunMoon />;
+         case "cafe":
+        return <Coffee />;
       case "light2":
         return <Flower />;
       case "dark2":
         return <Flower2 />;
-      case "cafe":
-        return <Coffee />;
+      case "forest":
+        return <Trees />;
+     
     }
   };
 

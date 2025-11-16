@@ -29,13 +29,7 @@ export default function MainRootLayout({
           enableSystem
           disableTransitionOnChange
           /* temas */
-          value={{
-            light: "light",
-            dark: "dark",
-            light2: "light2",
-            dark2: "dark2",
-            cafe: "cafe",
-          }}
+          themes={["light","dark","cafe","light2","dark2","forest"]}
         >
           {children}
         </ThemeProvider>
