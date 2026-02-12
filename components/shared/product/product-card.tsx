@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import ProductPrice from './product-price'
 
 export default function ProductCard({product}: {product: Product}) {
+  console.log(product.price);
   return (
     <Card className="w-full max-w-sm">
       <CardHeader className="p-0 items-center">
@@ -28,7 +29,7 @@ export default function ProductCard({product}: {product: Product}) {
           <p>{product.rating} Stars</p>
 
           {product.stock > 0 ? (
-            <ProductPrice value={+product.price} />
+            <ProductPrice value={product.price} />
             //<p>CORREGIR</p>
           ) : (
             <p className="text-destructive">Out of Stock</p>
