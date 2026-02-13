@@ -18,10 +18,8 @@ export default function Header() {
                     {APP_NAME}
                 </span>
             </div>
-            <div className='space-x-2'>
                 <MenuHeader />
                
-            </div>
         </div>
     </header>
   )
