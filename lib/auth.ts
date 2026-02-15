@@ -23,7 +23,13 @@ export const auth = betterAuth({
             required: false,
             defaultValue:"user",
             input: false,
-        }
+        },
+        comms:{
+        type: "string",
+        required: true,
+        defaultValue: "Mail",
+        input: true
+      }
     },
   },
 });
