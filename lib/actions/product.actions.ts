@@ -1,7 +1,7 @@
 "use server"
 import { prisma } from "@/db/prisma";
 import { convertToPlainObject } from "@/lib/utils";
-
+import { Product } from "@/types/Product";
 
 
 export async function getLatestProducts() {
@@ -9,6 +9,29 @@ export async function getLatestProducts() {
     orderBy: {createdAt: "desc" },
     });
 return convertToPlainObject(data);
+}
+
+export async function getProductsTable(
+    {page = 1, pageSize = 2}:{
+        page?: number;
+        pageSize?: number;
+    }
+) {
+    const skip = (page -1) * pageSize;
+
+    const [data, totalCount] = await Promise.all([
+        prisma.product.findMany({
+            skip,
+            take: pageSize,
+            orderBy: { createdAt: "desc" },
+        }),
+        prisma.product.count(),
+    ]);
+    const totalPages = Math.ceil(totalCount / pageSize);
+    return {
+        data: convertToPlainObject(data) as unknown as Product[],
+        pageInfo: {totalCount, totalPages, currentPage: page },
+    };
 }
 
 export async function getProductBySlug(slug: string) {

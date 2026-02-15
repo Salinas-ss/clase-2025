@@ -9,7 +9,7 @@ export const auth = betterAuth({
     }),
     emailAndPassword: { 
     enabled: true, 
-    minPassrowdLength: 1,
+    minPasswordLength: 1,
   },
   user: {
     additionalFields:{

@@ -32,7 +32,7 @@ export default async function SignInPage({searchParams}: {searchParams: Promise<
                 <CardDescription className='text-center'> Sign in with your account</CardDescription>
             </CardHeader>
             <CardContent>
-                <CredentialsSignInForm callbackURL={callbackUrl}/>
+                <CredentialsSignInForm callbackUrl={callbackUrl}/>
             </CardContent>
         </Card>
     </div>

@@ -8,7 +8,7 @@ import { signUpDefaultValues } from '@/lib/constants';
 import { authClient } from '@/lib/auth-client';
 
 
-export default function CredentialsSignInForm() {
+export default function CredentialsSignInForm( {callbackUrl = "/profile",} : {callbackUrl? :string}) {
     async function handleSubmit(evt: React.FormEvent<HTMLFormElement>){
         evt.preventDefault();
         const formData = new FormData(evt.currentTarget)
@@ -20,7 +20,7 @@ export default function CredentialsSignInForm() {
             {
             email,
             password,
-            callbackURL: "/profile",
+            callbackURL: callbackUrl,
         },
         {
             onRequest: () => {},

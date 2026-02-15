@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { EllipsisVertical, ShoppingCartIcon, UserIcon } from 'lucide-react'
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
+import ToggleSigninSignout from '@/components/auth/toggle-signin-signout'
 
 
 export default function MenuHeader() {
@@ -16,11 +17,7 @@ export default function MenuHeader() {
                            <ShoppingCartIcon/> Cart
                         </Link>
                     </Button>
-                    <Button asChild variant={'ghost'}>
-                        <Link href={'/sign-in'}>
-                           <UserIcon/> Sign in
-                        </Link>
-                    </Button>
+                    <ToggleSigninSignout/>
         </nav>
         <nav className='md:hidden'>
             <Sheet>
@@ -33,6 +30,7 @@ export default function MenuHeader() {
                            <ShoppingCartIcon/> Cart
                         </Link>
                     </Button>
+                    <ToggleSigninSignout/>
                     <SheetDescription></SheetDescription>
                     </SheetContent>
                 </SheetTrigger>
